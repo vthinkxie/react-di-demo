@@ -8,6 +8,8 @@
     ],
     "allowJs": true,
     "skipLibCheck": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
