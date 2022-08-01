@@ -4,7 +4,9 @@ export class LoginService {
   constructor(private authServiceInterface: AuthService) {}
   login(): void {
     alert(
-      `Login ${this.authServiceInterface.authenticated ? "Success" : "Failed"}`
+      `Login from ${this.authServiceInterface.name} ${
+        this.authServiceInterface.authenticated ? "Success" : "Failed"
+      }`
     );
   }
 }

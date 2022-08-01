@@ -9,17 +9,27 @@ import {
   WeiXinAuthService,
 } from "./service/auth.service";
 import { LoginService } from "./service/login.service";
+import { OrderService } from "./service/order.service";
 
 export const Main: FC = () => {
   return (
     <DIContainer
       providers={[
+        OrderService,
         LoginService,
         { provide: DialogService, useClass: AppleDialogService },
         { provide: AuthService, useClass: SMSAuthService },
       ]}
     >
       <Login></Login>
+      <DIContainer
+        providers={[
+          LoginService,
+          { provide: AuthService, useClass: WeiXinAuthService },
+        ]}
+      >
+        <Login></Login>
+      </DIContainer>
       <Order></Order>
     </DIContainer>
   );
